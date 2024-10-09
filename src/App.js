@@ -34,9 +34,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Math App für Grundschüler</h1>
+        <h1>Mathe App für Yusra</h1>
         <p>
-          Was ist {question.num1} + {question.num2}?
+          {question.num1} + {question.num2} =
         </p>
 
         {/* Buttons für die Antworten */}
