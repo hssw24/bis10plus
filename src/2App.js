@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
+  // Funktion, um eine neue Aufgabe zu generieren
   const generateNewQuestion = () => {
     const num1 = Math.floor(Math.random() * 11); // Zahl 1 (0-10)
     const num2 = Math.floor(Math.random() * 11); // Zahl 2 (0-10)
     return { num1, num2 };
   };
 
-  // Initialer Zustand
+  // Initialer Zustand: Aufgabe generieren
   const [question, setQuestion] = useState(generateNewQuestion());
-  const [correct, setCorrect] = useState(null); // Zustand für Richtig/Falsch
+  const [correct, setCorrect] = useState(null); // Richtig oder falsch
   const [score, setScore] = useState(0); // Punktestand
 
   // Funktion zum Überprüfen der Antwort
@@ -23,18 +24,12 @@ function App() {
     } else {
       setCorrect(false);
     }
+    // Neue Aufgabe nach 1 Sekunde anzeigen
+    setTimeout(() => {
+      setCorrect(null);
+      setQuestion(generateNewQuestion());
+    }, 1000);
   };
-
-  // Effekt zum Aktualisieren der Frage nach 1 Sekunde, wenn die Antwort bewertet wurde
-  useEffect(() => {
-    if (correct !== null) {
-      const timer = setTimeout(() => {
-        setCorrect(null); // Rücksetzen des Feedbacks
-        setQuestion(generateNewQuestion()); // Neue Frage generieren
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [correct]); // Der Effekt wird ausgelöst, wenn sich der Zustand "correct" ändert
 
   return (
     <div className="App">
