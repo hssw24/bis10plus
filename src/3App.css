@@ -46,22 +46,16 @@
     background-color: #21a1f1;
   }
   
-  /* Container für das Feedback, um eine konstante Höhe zu gewährleisten */
-  .feedback-container {
-    height: 40px; /* Feste Höhe, um Verschieben zu verhindern */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
   .correct {
     color: limegreen;
     font-size: 1.5rem;
+    margin-top: 10px;
   }
   
   .incorrect {
     color: red;
     font-size: 1.5rem;
+    margin-top: 10px;
   }
   
   /* Optimierung für Mobilgeräte */

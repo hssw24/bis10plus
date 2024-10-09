@@ -39,9 +39,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Math App für Grundschüler</h1>
+        <h1>Mathe für Yusra</h1>
         <p>
-          Was ist {question.num1} + {question.num2}?
+          {question.num1} + {question.num2} = 
         </p>
 
         {/* Buttons für die Antworten */}
@@ -52,15 +52,13 @@ function App() {
             </button>
           ))}
         </div>
+        <p>Punktestand: {score}</p>
 
         {/* Rückmeldung, ob die Antwort korrekt war */}
-        <div className="feedback-container">
-          {correct === true && <p className="correct">Richtig!</p>}
-          {correct === false && <p className="incorrect">Falsch!</p>}
-        </div>
+        {correct === true && <p className="correct">Richtig!</p>}
+        {correct === false && <p className="incorrect">Falsch!</p>}
 
         {/* Punktestand */}
-        <p>Punktestand: {score}</p>
       </header>
     </div>
   );
