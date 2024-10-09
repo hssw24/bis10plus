@@ -4,8 +4,8 @@ import "./App.css";
 function App() {
   // Funktion, um eine neue Aufgabe zu generieren
   const generateNewQuestion = () => {
-    const num1 = Math.floor(Math.random() * 11); // Zahl 1 (0-10)
-    const num2 = Math.floor(Math.random() * 11); // Zahl 2 (0-10)
+    const num1 = Math.floor(Math.random() * 6); // Zahl 1 (0-5)
+    const num2 = Math.floor(Math.random() * 6); // Zahl 2 (0-5)
     return { num1, num2 };
   };
 
@@ -41,7 +41,7 @@ function App() {
 
         {/* Buttons für die Antworten */}
         <div className="button-grid">
-          {Array.from({ length: 21 }, (_, i) => (
+          {Array.from({ length: 11 }, (_, i) => (
             <button key={i} onClick={() => checkAnswer(i)} className="answer-button">
               {i}
             </button>

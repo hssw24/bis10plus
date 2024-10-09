@@ -26,9 +26,9 @@
   
   .button-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Angepasst für mehr Buttons */
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    max-width: 400px; /* Größere Breite für mehr Buttons */
+    max-width: 300px;
     margin: 20px auto;
   }
   
@@ -61,7 +61,7 @@
   /* Optimierung für Mobilgeräte */
   @media (max-width: 600px) {
     .button-grid {
-      grid-template-columns: repeat(4, 1fr); /* Passt sich an den Bildschirm an */
+      grid-template-columns: repeat(3, 1fr);
     }
   
     .answer-button {
